@@ -39,7 +39,8 @@ A class browser is built by nesting components inside `ClassBrowser`:
     <CB.ClassPropertyType type="number" />
   </CB.ClassProperty>
 
-  <CB.ClassMethod name="greet" modifier="public">
+  <CB.ClassMethod name="greet">
+    <CB.ClassModifier slot="modifiers" type="public" />
     Says hello.
 
     <CB.ClassMethodInput name="name" type="string">

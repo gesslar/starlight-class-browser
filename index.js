@@ -6,4 +6,5 @@ export { default as ClassModifier } from "./components/ClassModifier.astro";
 export { default as ClassMethodOutput } from "./components/ClassMethodOutput.astro";
 export { default as ClassProperty } from "./components/ClassProperty.astro";
 export { default as ClassPropertyType } from "./components/ClassPropertyType.astro";
+export { default as TargetLink } from "./components/TargetLink.astro";
 export { resolveHighlightColors, generateThemeCSS } from "./src/resolve-theme.js";
