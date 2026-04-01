@@ -1,0 +1,22 @@
+---
+title: ClassExtends
+description: Documents class inheritance or interface implementation.
+---
+
+Renders an inheritance row with a colored left border, label, parent name, source, and optional link.
+
+## Props
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `name` | `string` | *required* | Parent class/interface name |
+| `source` | `string` | — | Source file path |
+| `highlight` | `string` | `"object"` | Syntax highlight type |
+| `label` | `string` | `"extends"` | Display label (e.g. `"inherits"`, `"implements"`) |
+| `target` | `string` | — | Link URL |
+
+## Example
+
+```mdx
+<CB.ClassExtends name="EventEmitter" source="node:events" label="extends" />
+```

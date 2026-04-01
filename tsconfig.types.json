@@ -9,10 +9,10 @@
     "declarationMap": true,
     "emitDeclarationOnly": true,
     "outDir": "./types",
-    "rootDir": "./lib",
+    "rootDir": "./src",
     "removeComments": false,
     "strict": false,
     "skipLibCheck": true
   },
-  "include": ["lib/**/*.js"]
+  "include": ["src/**/*.js"]
 }

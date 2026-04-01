@@ -1,0 +1,105 @@
+---
+title: Live Demo
+description: A live example of the Starlight Class Browser documenting itself.
+---
+
+import * as CB from "@gesslar/starlight-class-browser";
+
+Here's the class browser documenting its own `ClassBrowser` component -- because why not.
+
+## Result
+
+<CB.ClassBrowser language="typescript" name="ClassBrowser" source="components/ClassBrowser.astro" type="class">
+  The top-level wrapper component for a class or API documentation block.
+  Provides the header, theme-aware syntax highlighting, copy-as-JSON, and
+  expand/collapse toggle.
+
+  <CB.ClassProperty name="name" label="prop">
+    <CB.ClassPropertyType type="string" />
+  </CB.ClassProperty>
+
+  <CB.ClassProperty name="language" label="prop">
+    <CB.ClassPropertyType type="string?" />
+  </CB.ClassProperty>
+
+  <CB.ClassProperty name="source" label="prop">
+    <CB.ClassPropertyType type="string?" />
+  </CB.ClassProperty>
+
+  <CB.ClassProperty name="type" label="prop">
+    <CB.ClassPropertyType type="string?" />
+  </CB.ClassProperty>
+
+  <CB.ClassProperty name="target" label="prop">
+    <CB.ClassPropertyType type="string?" />
+  </CB.ClassProperty>
+
+  <CB.ClassMethod name="generateThemeCSS" highlight="function">
+    <CB.ClassModifier slot="modifiers" type="public" />
+    Resolves syntax highlight colors from the active Starlight theme and
+    returns a CSS string with `--cb-hl-*` custom properties for light and
+    dark modes.
+
+    <CB.ClassMethodOutput type="Promise&lt;string&gt;" highlight="type">CSS custom property declarations, or empty string if no theme found</CB.ClassMethodOutput>
+  </CB.ClassMethod>
+
+  <CB.ClassMethod name="resolveHighlightColors" highlight="function">
+    <CB.ClassModifier slot="modifiers" type="public" />
+    Returns the resolved color map for all syntax highlight types.
+
+    <CB.ClassMethodOutput type="Promise&lt;ResolvedColors | null&gt;" highlight="type">Object mapping highlight names to dark/light color pairs, or null</CB.ClassMethodOutput>
+  </CB.ClassMethod>
+</CB.ClassBrowser>
+
+## Source
+
+````mdx
+//demo.mdx
+---
+title: Live Demo
+---
+
+import * as CB from "@gesslar/starlight-class-browser";
+
+<CB.ClassBrowser language="typescript" name="ClassBrowser" source="components/ClassBrowser.astro" type="class">
+  The top-level wrapper component for a class or API documentation block.
+  Provides the header, theme-aware syntax highlighting, copy-as-JSON, and
+  expand/collapse toggle.
+
+  <CB.ClassProperty name="name" label="prop">
+    <CB.ClassPropertyType type="string" />
+  </CB.ClassProperty>
+
+  <CB.ClassProperty name="language" label="prop">
+    <CB.ClassPropertyType type="string?" />
+  </CB.ClassProperty>
+
+  <CB.ClassProperty name="source" label="prop">
+    <CB.ClassPropertyType type="string?" />
+  </CB.ClassProperty>
+
+  <CB.ClassProperty name="type" label="prop">
+    <CB.ClassPropertyType type="string?" />
+  </CB.ClassProperty>
+
+  <CB.ClassProperty name="target" label="prop">
+    <CB.ClassPropertyType type="string?" />
+  </CB.ClassProperty>
+
+  <CB.ClassMethod name="generateThemeCSS" highlight="function">
+    <CB.ClassModifier slot="modifiers" type="public" />
+    Resolves syntax highlight colors from the active Starlight theme and
+    returns a CSS string with `--cb-hl-*` custom properties for light and
+    dark modes.
+
+    <CB.ClassMethodOutput type="Promise<string>" highlight="type">CSS custom property declarations, or empty string if no theme found</CB.ClassMethodOutput>
+  </CB.ClassMethod>
+
+  <CB.ClassMethod name="resolveHighlightColors" highlight="function">
+    <CB.ClassModifier slot="modifiers" type="public" />
+    Returns the resolved color map for all syntax highlight types.
+
+    <CB.ClassMethodOutput type="Promise<ResolvedColors | null>" highlight="type">Object mapping highlight names to dark/light color pairs, or null</CB.ClassMethodOutput>
+  </CB.ClassMethod>
+</CB.ClassBrowser>
+````

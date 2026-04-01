@@ -1,0 +1,29 @@
+---
+title: ClassMethodInput
+description: Documents a method parameter.
+---
+
+Renders a parameter row with name, type annotation, description, and optional hint/link.
+
+## Props
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `name` | `string` | *required* | Parameter name |
+| `type` | `string` | — | Type annotation |
+| `highlight` | `string` | `"parameter"` | Syntax highlight type for the name |
+| `typeHighlight` | `string` | — | Syntax highlight type for the type annotation |
+| `hint` | `string` | — | Hint text shown below the row (e.g. source file path) |
+| `target` | `string` | — | Link URL |
+
+## Slots
+
+The default slot is the parameter description text.
+
+## Example
+
+```mdx
+<CB.ClassMethodInput name="options" type="RequestOptions" hint="src/types.ts" target="/reference/types/">
+  Configuration for the request
+</CB.ClassMethodInput>
+```

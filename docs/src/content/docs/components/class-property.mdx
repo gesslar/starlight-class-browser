@@ -1,0 +1,27 @@
+---
+title: ClassProperty
+description: Documents a class property or field.
+---
+
+Renders a property row with a colored left border, label, name, and optional link.
+
+## Props
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `name` | `string` | *required* | Property name |
+| `highlight` | `string` | `"variable"` | Syntax highlight type |
+| `label` | `string` | `"prop"` | Display label |
+| `target` | `string` | — | Link URL |
+
+## Slots
+
+The default slot typically contains a `ClassPropertyType` component.
+
+## Example
+
+```mdx
+<CB.ClassProperty name="maxRetries" label="field">
+  <CB.ClassPropertyType type="number" />
+</CB.ClassProperty>
+```

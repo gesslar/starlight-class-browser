@@ -1,0 +1,27 @@
+---
+title: ClassMethodOutput
+description: Documents a method's return type.
+---
+
+Renders a return type row with type name, optional description, and optional hint/link.
+
+## Props
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `type` | `string` | *required* | Return type |
+| `highlight` | `string` | `"type"` | Syntax highlight type |
+| `hint` | `string` | — | Hint text shown below the row |
+| `target` | `string` | — | Link URL |
+
+## Slots
+
+The default slot is the return value description.
+
+## Example
+
+```mdx
+<CB.ClassMethodOutput type="Promise<User[]>">
+  A list of matching users
+</CB.ClassMethodOutput>
+```

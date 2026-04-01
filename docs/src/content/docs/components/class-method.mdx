@@ -1,0 +1,34 @@
+---
+title: ClassMethod
+description: A collapsible method/function documentation card.
+---
+
+Renders a `<details>` element with an anchor link, modifier badges, and a slot for parameters, return types, and description.
+
+## Props
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `name` | `string` | *required* | Method name (also used as the element `id`) |
+| `highlight` | `string` | `"function"` | Syntax highlight type for the name |
+| `open` | `boolean` | `false` | Pre-expand this method card |
+
+## Slots
+
+| Slot | Description |
+|------|-------------|
+| `modifiers` | `ClassModifier` badges rendered in the summary bar. The first badge determines the sash (colored left border). Without modifiers, the sash defaults to the `highlight` color (e.g. function color). |
+| *(default)* | `ClassMethodInput`, `ClassMethodOutput`, and free-form text/markdown. |
+
+## Example
+
+```mdx
+<CB.ClassMethod name="findById" highlight="function">
+  <CB.ClassModifier slot="modifiers" type="public" />
+
+  Looks up a user by their unique identifier.
+
+  <CB.ClassMethodInput name="id" type="string">The user ID</CB.ClassMethodInput>
+  <CB.ClassMethodOutput type="User | null">The user, or null if not found</CB.ClassMethodOutput>
+</CB.ClassMethod>
+```

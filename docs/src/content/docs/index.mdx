@@ -1,0 +1,36 @@
+---
+title: Starlight Class Browser
+description: A Swagger-style API documentation component for Astro Starlight sites.
+template: splash
+hero:
+  tagline: Beautiful, theme-aware class and API documentation for your Starlight site.
+  image:
+    file: ../../assets/gscb.svg
+  actions:
+    - text: Get Started
+      link: /guides/installation/
+      icon: right-arrow
+    - text: View on GitHub
+      link: https://github.com/gesslar/starlight-class-browser
+      icon: external
+      variant: minimal
+---
+
+import { Card, CardGrid } from '@astrojs/starlight/components';
+
+## Features
+
+<CardGrid stagger>
+  <Card title="Theme-aware highlighting" icon="sun">
+    Automatically resolves syntax colors from your Starlight theme at build time.
+  </Card>
+  <Card title="Composable components" icon="puzzle">
+    Mix and match ClassBrowser, ClassMethod, ClassProperty, and more to document any API shape.
+  </Card>
+  <Card title="Copy as JSON" icon="document">
+    Built-in button to copy the entire class definition as structured JSON.
+  </Card>
+  <Card title="Light & dark mode" icon="moon">
+    Full support for both themes with appropriate badge and highlight colors.
+  </Card>
+</CardGrid>

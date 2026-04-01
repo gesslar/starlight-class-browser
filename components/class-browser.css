@@ -317,7 +317,7 @@
   cursor: pointer;
   list-style: none;
   user-select: none;
-  border-inline-start: 3px solid var(--cb-badge-default);
+  border-inline-start: 3px solid var(--cb-hl-function);
   border-radius: var(--cb-border-radius);
   position: relative;
   min-width: 0;
@@ -381,11 +381,13 @@
   border-radius: var(--cb-border-radius);
 }
 
-/* Coloured left border based on visibility */
-.cb-method.cb-vis-public > summary    { border-inline-start-color: var(--cb-badge-public); }
-.cb-method.cb-vis-private > summary   { border-inline-start-color: var(--cb-badge-private); }
-.cb-method.cb-vis-protected > summary { border-inline-start-color: var(--cb-badge-protected); }
-.cb-method.cb-vis-nomask > summary    { border-inline-start-color: var(--cb-badge-nomask); }
+/* Coloured left border based on first modifier badge */
+.cb-method:has(> summary > .cb-badge-public:first-of-type) > summary    { border-inline-start-color: var(--cb-badge-public); }
+.cb-method:has(> summary > .cb-badge-private:first-of-type) > summary   { border-inline-start-color: var(--cb-badge-private); }
+.cb-method:has(> summary > .cb-badge-protected:first-of-type) > summary { border-inline-start-color: var(--cb-badge-protected); }
+.cb-method:has(> summary > .cb-badge-nomask:first-of-type) > summary    { border-inline-start-color: var(--cb-badge-nomask); }
+.cb-method:has(> summary > .cb-badge-static:first-of-type) > summary    { border-inline-start-color: var(--cb-badge-static); }
+.cb-method:has(> summary > .cb-badge-nosave:first-of-type) > summary    { border-inline-start-color: var(--cb-badge-nosave); }
 
 .cb-method > summary:hover {
   background: var(--cb-header-bg);
@@ -466,7 +468,7 @@
 
 .cb-param-desc::before,
 .cb-returns-desc::before {
-  content: "\2014 ";
+  content: "\2014\00a0";
   opacity: 0.4;
 }
 
