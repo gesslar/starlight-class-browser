@@ -5,6 +5,8 @@ on:
 
 jobs:
   deploy-docs:
+    permissions:
+      contents: read
     uses: gesslar/Maint/.github/workflows/ReleaseStarlight.yaml@main
     with:
       docs_directory: "docs"
