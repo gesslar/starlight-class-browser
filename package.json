@@ -45,7 +45,7 @@
     "major": "npm version major"
   },
   "devDependencies": {
-    "@gesslar/uglier": "^2.3.1",
+    "@gesslar/uglier": "^2.4.0",
     "eslint": "^10.1.0",
     "typescript": "^6.0.2"
   }
