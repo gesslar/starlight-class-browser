@@ -1,0 +1,45 @@
+---
+title: ClassModifier
+description: A badge component for class, method, or property modifiers.
+---
+
+Renders a modifier badge (e.g. `public`, `private`, `static`, `nomask`). Works in any context -- inside `ClassBrowser`, `ClassMethod`, or `ClassProperty`.
+
+When used inside `ClassMethod`, place it in the `modifiers` named slot so it renders in the summary bar. The first modifier badge determines the colored left border (sash). Methods without any modifiers default to the highlight color (typically the function color).
+
+## Props
+
+| Prop | Type | Required | Description |
+|------|------|----------|-------------|
+| `type` | `string` | Yes | The modifier name (becomes both the label and the CSS class) |
+
+## Built-in badge colors
+
+`public`, `private`, `protected`, `nomask`, `nosave`, `static`, `varargs`
+
+Any other value falls back to the default badge style. You can add custom colors via CSS:
+
+```css
+.cb-badge-readonly { color: #fff; background: #0891b2; }
+```
+
+## Examples
+
+### Method modifiers
+
+```mdx
+<CB.ClassMethod name="doSomething">
+  <CB.ClassModifier slot="modifiers" type="public" />
+  <CB.ClassModifier slot="modifiers" type="nomask" />
+  ...
+</CB.ClassMethod>
+```
+
+### Class-level modifier
+
+```mdx
+<CB.ClassBrowser name="BaseWidget" type="class">
+  <CB.ClassModifier type="abstract" />
+  ...
+</CB.ClassBrowser>
+```

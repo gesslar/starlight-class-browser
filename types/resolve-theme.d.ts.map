@@ -1,1 +1,1 @@
-{"version":3,"file":"resolve-theme.d.ts","sourceRoot":"","sources":["../lib/resolve-theme.js"],"names":[],"mappings":"AA2MA,sDAiBC;AAED;;;GAGG;AACH,oDAaC"}
+{"version":3,"file":"resolve-theme.d.ts","sourceRoot":"","sources":["../src/resolve-theme.js"],"names":[],"mappings":"AA2MA,sDAiBC;AAED;;;GAGG;AACH,oDAaC"}

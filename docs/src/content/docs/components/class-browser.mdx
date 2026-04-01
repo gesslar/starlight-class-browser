@@ -1,0 +1,37 @@
+---
+title: ClassBrowser
+description: The top-level wrapper component for a class/API documentation block.
+---
+
+The main container that provides the header, theme CSS injection, copy-as-JSON button, and expand/collapse toggle.
+
+## Props
+
+| Prop | Type | Required | Description |
+|------|------|----------|-------------|
+| `name` | `string` | Yes | Class, module, or object name |
+| `language` | `string` | No | Language context (e.g. `"lpc"`, `"typescript"`) |
+| `source` | `string` | No | Source file path shown in the header |
+| `type` | `string` | No | Badge type: `object`, `module`, `class`, `interface` |
+| `target` | `string` | No | Link URL (external if starts with `http`) |
+
+## Slots
+
+The default slot accepts any combination of `ClassExtends`, `ClassProperty`, `ClassMethod`, and free-form text/markdown.
+
+## Features
+
+- **Theme CSS injection**: Resolves highlight colors from your Starlight theme at build time
+- **Copy as JSON**: Button that serializes the entire class definition to clipboard
+- **Expand/collapse all**: Toggle button for all method cards
+- **Hash navigation**: Links like `#methodName` auto-open and scroll to the target method
+- **View transitions**: Re-initializes on `astro:after-swap` for Astro view transitions
+
+## Example
+
+```mdx
+<CB.ClassBrowser language="typescript" name="UserService" source="src/services/user.ts" type="class">
+  Manages user lifecycle operations.
+  <!-- child components go here -->
+</CB.ClassBrowser>
+```

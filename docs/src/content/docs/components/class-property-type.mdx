@@ -1,0 +1,19 @@
+---
+title: ClassPropertyType
+description: Displays a type annotation badge.
+---
+
+Renders a styled type annotation span, typically nested inside `ClassProperty`.
+
+## Props
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `type` | `string` | *required* | The type string to display |
+| `highlight` | `string` | `"type"` | Syntax highlight type |
+
+## Example
+
+```mdx
+<CB.ClassPropertyType type="Map<string, User>" highlight="type" />
+```

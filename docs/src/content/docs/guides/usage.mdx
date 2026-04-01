@@ -1,0 +1,111 @@
+---
+title: Usage
+description: How to use the Starlight Class Browser components in your docs.
+---
+
+## Importing
+
+The recommended import style is a namespace import:
+
+```mdx
+import * as CB from "@gesslar/starlight-class-browser";
+```
+
+You can also use named imports if you prefer:
+
+```mdx
+import {
+  ClassBrowser,
+  ClassMethod,
+  ClassMethodInput,
+  ClassMethodOutput,
+  ClassProperty,
+  ClassPropertyType,
+  ClassExtends,
+} from "@gesslar/starlight-class-browser";
+```
+
+## Basic structure
+
+A class browser is built by nesting components inside `ClassBrowser`:
+
+```mdx
+<CB.ClassBrowser name="MyClass" type="class" source="src/my-class.ts">
+  Description of the class goes here as free text.
+
+  <CB.ClassExtends name="BaseClass" source="src/base.ts" />
+
+  <CB.ClassProperty name="count" label="field">
+    <CB.ClassPropertyType type="number" />
+  </CB.ClassProperty>
+
+  <CB.ClassMethod name="greet" modifier="public">
+    Says hello.
+
+    <CB.ClassMethodInput name="name" type="string">
+      Who to greet
+    </CB.ClassMethodInput>
+    <CB.ClassMethodOutput type="string">
+      The greeting message
+    </CB.ClassMethodOutput>
+  </CB.ClassMethod>
+</CB.ClassBrowser>
+```
+
+## Theme integration
+
+The `ClassBrowser` component automatically resolves syntax highlight colors
+from your Starlight theme at build time. It checks for:
+
+1. **Starlight theme plugins** (`starlight-theme-*` packages) that ship syntax themes
+2. **Starlight's bundled Night Owl** themes (the default)
+3. **CSS fallback colors** if no theme can be loaded
+
+No configuration is needed — it just works with your existing theme.
+
+## Light DOM only
+
+Every component in this library renders directly into the light DOM. There is
+no Shadow DOM boundary, no `<slot>` indirection, no style encapsulation to
+fight with. Your Starlight theme's CSS applies naturally, the components
+inherit custom properties without hacks, and you can inspect and override
+anything with normal selectors.
+
+### Why not Shadow DOM?
+
+Shadow DOM solves a real problem — style isolation between unrelated widget
+trees on the same page. But documentation components aren't unrelated widgets.
+They *are* the page. Wrapping them in a shadow root means:
+
+- Theme variables need to be explicitly passed through or duplicated.
+- Global styles (typography, spacing, colors) stop cascading, so you end up
+  re-declaring them inside every shadow boundary.
+- Debugging becomes a spelunking expedition through `#shadow-root` nodes in
+  DevTools.
+- Slot-based composition adds a layer of abstraction that buys you nothing
+  when the host page already controls the entire rendering context.
+
+For a component whose whole job is to look like the rest of your docs, style
+encapsulation is not a feature — it's overhead.
+
+You're welcome for my service.
+
+## Highlight types
+
+The `highlight` prop on most components maps to TextMate syntax scopes. Available values:
+
+| Value | Scope | Typical use |
+|-------|-------|-------------|
+| `function` | `entity.name.function` | Method names |
+| `type` | `storage.type` | Type annotations |
+| `object` | `entity.name.class` | Class/object names |
+| `parameter` | `variable.parameter` | Parameters |
+| `variable` | `variable` | Properties, fields |
+| `keyword` | `keyword` | Language keywords |
+| `string` | `string` | String values |
+| `number` | `constant.numeric` | Numeric values |
+| `comment` | `comment` | Comments |
+| `constant` | `constant.language` | Language constants |
+| `support` | `support.function` | Built-in functions |
+| `tag` | `entity.name.tag` | Tags |
+| `property` | `meta.property-name` | Property names |

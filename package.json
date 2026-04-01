@@ -9,7 +9,7 @@
     "class",
     "browser"
   ],
-  "homepage": "https://github.com/gesslar/gesslar-class-browser#readme",
+  "homepage": "https://starlight-class-browser.gesslar.dev",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/gesslar/gesslar-class-browser.git"
@@ -25,12 +25,15 @@
       "default": "./index.js"
     },
     "./components/*": "./components/*",
-    "./lib/*": "./lib/*"
+    "./src/*": "./src/*"
+  },
+  "engines": {
+    "node": ">=24.11.0"
   },
   "files": [
     "index.js",
     "components/",
-    "lib/",
+    "src/",
     "types/"
   ],
   "scripts": {
@@ -42,11 +45,19 @@
     "pr": "gt submit -p --ai",
     "patch": "npm version patch",
     "minor": "npm version minor",
-    "major": "npm version major"
+    "major": "npm version major",
+    "test": "vitest run",
+    "docs:dev": "npm run dev --prefix docs",
+    "docs:start": "npm run start --prefix docs",
+    "docs:build": "npm run build --prefix docs",
+    "docs:preview": "npm run preview --prefix docs"
   },
   "devDependencies": {
+    "@astrojs/starlight": "^0.38.2",
     "@gesslar/uglier": "^2.4.0",
+    "astro": "^6.1.2",
     "eslint": "^10.1.0",
-    "typescript": "^6.0.2"
+    "typescript": "^6.0.2",
+    "vitest": "^4.1.2"
   }
 }

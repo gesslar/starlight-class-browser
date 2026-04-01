@@ -1,0 +1,35 @@
+---
+title: Installation
+description: How to install and set up the Starlight Class Browser.
+---
+
+import { Tabs, TabItem } from '@astrojs/starlight/components';
+
+## Install the package
+
+<Tabs>
+  <TabItem label="npm">
+    ```sh
+    npm install @gesslar/starlight-class-browser
+    ```
+  </TabItem>
+  <TabItem label="pnpm">
+    ```sh
+    pnpm add @gesslar/starlight-class-browser
+    ```
+  </TabItem>
+  <TabItem label="yarn">
+    ```sh
+    yarn add @gesslar/starlight-class-browser
+    ```
+  </TabItem>
+</Tabs>
+
+## That's it
+
+No Astro integration to register, no config to add. The components are ready
+to import in any `.mdx` page:
+
+```mdx
+import * as CB from "@gesslar/starlight-class-browser";
+```

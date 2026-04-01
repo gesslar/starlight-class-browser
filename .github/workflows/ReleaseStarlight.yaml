@@ -1,0 +1,17 @@
+name: Release Starlight
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  deploy-docs:
+    uses: gesslar/Maint/.github/workflows/ReleaseStarlight.yaml@main
+    with:
+      docs_directory: "docs"
+    secrets:
+      SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+      SFTP_SERVER: ${{ secrets.SFTP_SERVER }}
+      SFTP_USERNAME: ${{ secrets.SFTP_USERNAME }}
+      SFTP_TARGET_DIR: ${{ secrets.SFTP_TARGET_DIR }}

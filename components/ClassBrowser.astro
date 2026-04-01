@@ -1,7 +1,7 @@
 ---
 import "./class-browser.css";
 import TargetLink from "./TargetLink.astro";
-import { generateThemeCSS } from "../lib/resolve-theme.js";
+import { generateThemeCSS } from "../src/resolve-theme.js";
 
 const { language, name, source, type, target } = Astro.props;
 
@@ -93,7 +93,7 @@ const themeCSS = await generateThemeCSS();
             };
             const badges = el.querySelectorAll("summary .cb-badge");
             if (badges.length) {
-              method.visibility = Array.from(badges).map((b) => b.textContent?.trim()).join(" ");
+              method.modifiers = Array.from(badges).map((b) => b.textContent?.trim());
             }
 
             // Description: first <p> in body
