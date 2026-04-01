@@ -1,0 +1,52 @@
+{
+  "name": "@gesslar/starlight-class-browser",
+  "version": "1.0.0",
+  "description": "A class browser for starlight/astro-based things.",
+  "keywords": [
+    "astro",
+    "starlight",
+    "component",
+    "class",
+    "browser"
+  ],
+  "homepage": "https://github.com/gesslar/gesslar-class-browser#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gesslar/gesslar-class-browser.git"
+  },
+  "license": "Unlicense",
+  "author": "gesslar",
+  "type": "module",
+  "main": "index.js",
+  "types": "types/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./types/index.d.ts",
+      "default": "./index.js"
+    },
+    "./components/*": "./components/*",
+    "./lib/*": "./lib/*"
+  },
+  "files": [
+    "index.js",
+    "components/",
+    "lib/",
+    "types/"
+  ],
+  "scripts": {
+    "types:build": "tsc -p tsconfig.types.json",
+    "lint": "eslint src/",
+    "lint:fix": "eslint src/ --fix",
+    "submit": "npm publish --access public --//registry.npmjs.org/:_authToken=\"${NPM_ACCESS_TOKEN}\"",
+    "update": "npx npm-check-updates -u && npm install",
+    "pr": "gt submit -p --ai",
+    "patch": "npm version patch",
+    "minor": "npm version minor",
+    "major": "npm version major"
+  },
+  "devDependencies": {
+    "@gesslar/uglier": "^2.3.1",
+    "eslint": "^10.1.0",
+    "typescript": "^6.0.2"
+  }
+}

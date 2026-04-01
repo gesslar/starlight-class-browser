@@ -1,0 +1,12 @@
+---
+import TargetLink from "./TargetLink.astro";
+
+const { name, source, highlight = "object", label = "extends", target } = Astro.props;
+---
+
+<div class="cb-extends">
+  <span class="cb-extends-label">{label}</span>
+  <span class={`cb-hl cb-hl-${highlight}`}>{name}</span>
+  {source && <span class="cb-source">{source}</span>}
+  {target && <TargetLink target={target} />}
+</div>

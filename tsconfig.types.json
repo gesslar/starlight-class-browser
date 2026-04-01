@@ -1,0 +1,18 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "ES2022",
+    "moduleResolution": "bundler",
+    "allowJs": true,
+    "checkJs": false,
+    "declaration": true,
+    "declarationMap": true,
+    "emitDeclarationOnly": true,
+    "outDir": "./types",
+    "rootDir": "./lib",
+    "removeComments": false,
+    "strict": false,
+    "skipLibCheck": true
+  },
+  "include": ["lib/**/*.js"]
+}
