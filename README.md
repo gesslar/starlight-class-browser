@@ -74,4 +74,4 @@ Full documentation with interactive examples: [starlight-class-browser.gesslar.d
 
 ## License
 
-`@gesslar/starlight-class-browser` is released into the public domain under the [0BSD](LICENSE.txt).
+`@gesslar/starlight-class-browser` is released under the [0BSD](LICENSE.txt).
