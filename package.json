@@ -14,7 +14,7 @@
     "type": "git",
     "url": "git+https://github.com/gesslar/gesslar-class-browser.git"
   },
-  "license": "Unlicense",
+  "license": "0BSD",
   "author": "gesslar",
   "type": "module",
   "main": "index.js",
