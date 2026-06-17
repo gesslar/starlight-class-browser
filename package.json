@@ -53,7 +53,7 @@
     "docs:preview": "npm run preview --prefix docs"
   },
   "devDependencies": {
-    "@astrojs/starlight": "^0.38.2",
+    "@astrojs/starlight": "^0.40.0",
     "@gesslar/uglier": "^2.4.0",
     "astro": "^6.1.2",
     "eslint": "^10.1.0",
